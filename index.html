@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Teddy Teske — Composer / Sound Designer</title>
+
+<style>
+:root{
+  --bg:#0a0a0a;
+  --fg:#f2f2f2;
+  --muted:#b5b5b5;
+  --accent:#ff6b2d;
+  --header-h:110px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Inter,Arial,Helvetica,sans-serif;scroll-behavior:smooth}
+body{padding-top:var(--header-h)}
+
+/* HEADER */
+header{
+  position:fixed;top:0;left:0;width:100%;height:var(--header-h);z-index:9999;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;
+  background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(8px);
+}
+
+.header-left img{height:100px;width:auto;display:block}
+
+nav{display:flex;gap:28px}
+nav a{color:#ccc;text-decoration:none;font-weight:600;font-size:15px}
+nav a:hover{color:#fff}
+
+/* HAMBURGER */
+.hamburger{display:none;width:32px;height:22px;cursor:pointer;flex-direction:column;justify-content:space-between}
+.hamburger span{height:3px;width:100%;background:#fff;border-radius:2px}
+
+.mobile-nav{
+  position:fixed;top:var(--header-h);left:0;width:100%;
+  background:rgba(0,0,0,0.92);
+  backdrop-filter:blur(10px);
+  display:none;flex-direction:column;align-items:center;
+  padding:32px 0;gap:24px;z-index:9998;
+}
+.mobile-nav a{color:#fff;font-size:20px;text-decoration:none;font-weight:600}
+.mobile-nav.open{display:flex}
+
+/* HERO */
+#home{
+  height:100vh;position:relative;
+  background:url('logoportfolio01.png') center/cover no-repeat;
+}
+#home::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.55)}
+
+.hero-content{
+  position:relative;z-index:1;
+  height:100%;
+  display:flex;flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 40px;
+}
+
+.hero-content h1{font-size:64px;margin:0 0 12px 0}
+.hero-content h2{font-size:20px;color:var(--muted);font-weight:400;max-width:900px}
+
+/* SECTIONS */
+section:not(#home){max-width:1200px;margin:0 auto;padding:100px 40px}
+section h2{font-size:34px;margin-bottom:20px}
+section p{color:var(--muted);font-size:18px;line-height:1.65;max-width:900px}
+
+/* CREDITS */
+.credits-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:40px
+}
+.credits-item{
+  background:#111;border:1px solid #222;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;padding:28px
+}
+.credits-item img{width:100%;height:auto;object-fit:contain}
+
+/* CONTACT */
+form{max-width:640px;display:flex;flex-direction:column;gap:16px}
+input,textarea{
+  background:#0f0f0f;border:1px solid #222;color:#fff;
+  padding:14px;border-radius:8px;font-size:16px
+}
+button{
+  background:transparent;border:1px solid #333;color:#fff;
+  padding:14px;border-radius:8px;font-size:16px;cursor:pointer
+}
+button:hover{background:#111}
+
+footer{text-align:center;color:#777;padding:60px 20px;font-size:14px}
+
+/* RESPONSIVE NAV ONLY */
+@media(max-width:900px){
+  nav{display:none}
+  .hamburger{display:flex}
+  .hero-content h1{font-size:44px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="teddylogo01.png" alt="Teddy Teske Logo">
+  </div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#credits">Credits</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home" onclick="toggleMenu()">Home</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#credits" onclick="toggleMenu()">Credits</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<section id="home">
+  <div class="hero-content">
+    <h1>Teddy Teske</h1>
+    <h2>Sound Designer • Film Composer</h2>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <p>
+    Welcome to my personal website! My name is Teddy Teske. I am a film composer, sound designer, and re-recording mixer with over a decade of professional experience in film, trailers, and AV marketing. My career began in Los Angeles working on small independent films, which led to credits on major studio and big-budget productions.
+  </p>
+  <p>
+    In addition to custom music and sound design for film and trailers, my passion is to create cinematic SFX libraries and music assets drawn from original material developed for films — including unreleased sounds that never made the final cut. Every project is approached collaboratively, working one-on-one with directors and producers to help shape sound that serves the story.
+    Whether it's a custom design or a score for your next trailer campaign, I am here to help tell your story. 
+  </p>
+</section>
+
+<section id="credits">
+  <h2>Credits</h2>
+  <div class="credits-grid">
+    <div class="credits-item"><img src="chiamanschancecover.png" alt="Credit"></div>
+    <div class="credits-item"><img src="petsemetery19cover.png" alt="Credit"></div>
+    <div class="credits-item"><img src="lastnightinsoho21cover.png" alt="Credit"></div>
+    <div class="credits-item"><img src="halloweenends22cover.png" alt="Credit"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Let's talk about how I can help you tell your story</p>
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="16c0bb7d-3c84-459e-bb6b-fc6368e37b2f">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <textarea name="message" rows="6" placeholder="Project details, timeline, links..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>©2025 Teddy Teske — All Rights Reserved</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
