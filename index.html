@@ -46,8 +46,6 @@ header{
   width:auto;
   display:block;
 }
-
-/* NUDGE LOGO LEFT */
 .header-left {
   margin-left: -16px;
 }
@@ -187,6 +185,17 @@ section p{
   object-fit:contain;
 }
 
+/* DEMO REEL */
+.demo-reel iframe{
+  width:100%;
+  max-width:900px;
+  height:500px;
+  border:none;
+  border-radius:14px;
+  display:block;
+  margin:0 auto;
+}
+
 /* CONTACT */
 form{
   max-width:640px;
@@ -248,6 +257,7 @@ footer{
     <a href="sfxstore.html">SFX Store</a>
     <a href="music.html">Music Catalog</a>
     <a href="#credits">Credits</a>
+    <a href="#demo">Demo Reel</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -258,10 +268,11 @@ footer{
 
 <div class="mobile-nav" id="mobileNav">
   <a href="#home" onclick="toggleMenu()">Home</a>
-  <a href="sfxstore.html">SFX Store</a>
-  <a href="music.html">Music Catalog</a>
+  <a href="sfxstore.html" onclick="toggleMenu()">SFX Store</a>
+  <a href="music.html" onclick="toggleMenu()">Music Catalog</a>
   <a href="#about" onclick="toggleMenu()">About</a>
   <a href="#credits" onclick="toggleMenu()">Credits</a>
+  <a href="#demo" onclick="toggleMenu()">Demo Reel</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
 </div>
 
@@ -291,6 +302,14 @@ footer{
     <div class="credits-item"><img src="petsemetery19cover.png" alt="Credit"></div>
     <div class="credits-item"><img src="lastnightinsoho21cover.png" alt="Credit"></div>
     <div class="credits-item"><img src="halloweenends22cover.png" alt="Credit"></div>
+  </div>
+</section>
+
+<section id="demo">
+  <h2>Demo Reel</h2>
+  <p>Check out my cinematic demo reel below (YouTube placeholder):</p>
+  <div class="demo-reel">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="Demo Reel" allowfullscreen></iframe>
   </div>
 </section>
 
